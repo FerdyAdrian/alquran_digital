@@ -27,7 +27,7 @@ const aboutSections = [
   },
   {
     title: 'Developer',
-    body: 'Developer: Anisa Filzah Ghozani\nEmail: copawork0@gmail.com\nWebsite: https://github.com/FerdyAdrian/alquran_digital',
+    body: 'Tim Al-Qur’an Digital\nEmail: copawork0@gmail.com\nWebsite: https://github.com/FerdyAdrian/alquran_digital',
   },
   {
     title: 'Kebijakan',

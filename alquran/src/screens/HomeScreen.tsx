@@ -31,7 +31,7 @@ export default function HomeScreen() {
     <View style={styles.headerWrap}>
       <View>
         <AppText color={theme.colors.muted}>{"Assalaamu'alaikum Wr.Wb"}</AppText>
-        <AppText color={theme.colors.muted}>{"Selamat Datang di aplikasi Al-Qur'an by Anisa Filzah Ghozani"}</AppText>
+        <AppText color={theme.colors.muted}>{"Selamat datang di Al-Qur’an Digital."}</AppText>
         <AppText variant="title">{'Dekat dengan Al-Qur’an, setiap hari.'}</AppText>
       </View>
 

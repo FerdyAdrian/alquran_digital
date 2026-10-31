@@ -154,7 +154,7 @@ export default function TilawahNotesScreen() {
             <View>
               <AppText variant="title">Catatan Tilawah</AppText>
               <AppText color={theme.colors.muted}>
-                Apk by Anisa Filzah Ghozani
+                Catat bacaan dan jaga konsistensi tilawah.
               </AppText>
             </View>
 

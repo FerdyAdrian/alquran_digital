@@ -402,7 +402,7 @@ const contentByTitle: Record<string, ContentSection[]> = {
     {
       heading: 'Informasi Profil',
       items: [
-        { title: 'Nama', description: 'Anisa Filzah Ghozani', meta: 'Pengguna' },
+        { title: 'Nama', description: 'Pengguna Al-Qur’an Digital', meta: 'Pengguna' },
         { title: 'Tujuan', description: 'Membiasakan tilawah dan mencatat progress bacaan.', meta: 'Target' },
         { title: 'Preferensi', description: 'Tema hijau islami dan audio murottal pilihan.', meta: 'Setelan' },
       ],
