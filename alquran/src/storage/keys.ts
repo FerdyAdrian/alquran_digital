@@ -1,0 +1,18 @@
+export const STORAGE_KEYS = {
+  surahList: '@quran/surah-list',
+  surahDetail: (id: number) => `@quran/surah-detail/${id}`,
+  bookmarks: '@quran/bookmarks',
+  favorites: '@quran/favorite-surah',
+  lastRead: '@quran/last-read',
+  history: '@quran/history',
+  themeMode: '@quran/theme-mode',
+  reminder: '@quran/reminder',
+  tilawahNotes: '@quran/tilawah-notes',
+  selectedQari: '@quran/selected-qari',
+  authUser: '@quran/auth-user',
+  authAccounts: '@quran/auth-accounts',
+  tilawahSchedules: '@quran/tilawah-schedules',
+  khatamTarget: '@quran/khatam-target',
+  worshipReminders: '@quran/worship-reminders',
+  prayerCity: '@quran/prayer-city',
+};
