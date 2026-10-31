@@ -1,0 +1,22 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const ts = require('typescript');
+const values = new Map();
+let failWrites = false;
+const secure = {getItemAsync:async key=>values.get(key)??null,setItemAsync:async(key,value)=>{if(failWrites&&key.includes('.'))throw new Error('simulated failure');assert.ok(Buffer.byteLength(value,'utf8')<2048);values.set(key,value);},deleteItemAsync:async key=>{values.delete(key);}};
+const source=ts.transpileModule(fs.readFileSync('src/storage/sessionStorage.native.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText;
+const context={exports:{},require:name=>{assert.equal(name,'expo-secure-store');return secure;},Date,Promise,Array,Math,JSON,Number,Error};
+vm.runInNewContext(source,context);
+const storage=context.exports.default;
+(async()=>{
+ const token='a'.repeat(449)+'🕌'.repeat(1000)+'z'.repeat(4000);
+ await storage.setItem('session',token); assert.equal(await storage.getItem('session'),token);
+ failWrites=true; await assert.rejects(storage.setItem('session','new value')); failWrites=false;
+ assert.equal(await storage.getItem('session'),token);
+ await storage.setItem('session','replacement'); assert.equal(await storage.getItem('session'),'replacement'); assert.equal(values.size,2);
+ await storage.removeItem('session'); assert.equal(values.size,0); assert.equal(await storage.getItem('session'),null);
+ values.set('session','broken json'); assert.equal(await storage.getItem('session'),null);
+ await storage.setItem('session','recovered'); assert.equal(await storage.getItem('session'),'recovered');
+ console.log('Penyimpanan sesi: Unicode, batas Keychain, kegagalan tulis, penggantian dan penghapusan lulus.');
+})().catch(error=>{console.error(error);process.exitCode=1;});

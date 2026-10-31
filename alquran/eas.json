@@ -1,0 +1,51 @@
+{
+  "cli": {
+    "version": ">= 13.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://ikozoeswmedhrlcdtooi.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_caljXqg1XT1kPjKJIRcP-Q_VO39cPol"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_ADMOB_TEST_ADS": "true",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://ikozoeswmedhrlcdtooi.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_caljXqg1XT1kPjKJIRcP-Q_VO39cPol"
+      },
+      "environment": "preview"
+    },
+    "production": {
+      "autoIncrement": true,
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_ADMOB_ANDROID_BANNER_ID": "ca-app-pub-5041245306964870/3626221449",
+        "ADMOB_ANDROID_APP_ID": "ca-app-pub-5041245306964870~7788827731",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://ikozoeswmedhrlcdtooi.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_caljXqg1XT1kPjKJIRcP-Q_VO39cPol"
+      },
+      "environment": "production"
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "track": "internal"
+      }
+    }
+  }
+}
