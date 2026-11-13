@@ -21,3 +21,6 @@ Atur custom SMTP dan template kode pada Supabase, uji alur akun pada akun uji, p
 Publishable key Supabase dan ID AdMob adalah konfigurasi publik. Service role, secret key, password SMTP, access token deployment dan keystore tidak boleh dimasukkan ke aplikasi atau repositori.
 
 Referensi paket hosting: https://vercel.com/docs/plans/hobby
+
+## Verifikasi iklan
+Lihat [langkah perbaikan domain developer dan app-ads.txt](ADMOB_VERIFICATION.md).
